@@ -12,6 +12,10 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it 'title should be present, expected true' do
+    expect(subject).to be_valid
+  end
+
   it('title should be less than 250 character') do
     subject.title = 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin word, consectetur'
 
