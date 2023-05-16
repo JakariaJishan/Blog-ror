@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-  def index
-    @user_id = params[:user_id]
-  end
+  def index; end
 
   def show
     @post_id = params[:id]
