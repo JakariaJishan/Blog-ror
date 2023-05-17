@@ -1,1 +1,6 @@
 <h1>users</h1>
+
+
+<% @users.each do |user| %>
+    <%= render partial:"shared/users/index" , locals: {user:user} %>
+<% end %>
