@@ -7,4 +7,9 @@
     <%= post.text %>
     <%= post.comments_counter %>
     <%= post.likes_counter %>
+
+<% end %>
+
+<%= link_to "#{@user.id}/posts" do %>
+<%= 'see all posts' %>
 <% end %>

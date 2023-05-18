@@ -5,6 +5,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post_id = params[:id]
+    @posts = Post.where(author_id: params[:user_id])
   end
 end
