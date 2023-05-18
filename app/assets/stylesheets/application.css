@@ -13,3 +13,119 @@
  *= require_tree .
  *= require_self
  */
+* {
+    /* background-color: orange; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#home-card,
+#show,
+#all-posts {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    width: 80%;
+    margin: auto;
+}
+
+#home-card .inner-home-card {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: space-between;
+    background-color: bisque;
+    align-items: center;
+}
+
+#home-card .inner-home-card img {
+    height: 200px;
+    width: 200px;
+}
+
+#home-card .inner-home-card b {
+    padding-right: 20px;
+}
+
+/* show */
+
+.home-show-card {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: space-between;
+    background-color: bisque;
+    align-items: center;
+}
+
+.home-show-card img {
+    height: 200px;
+    width: 200px;
+}
+
+.home-show-card b {
+    padding-right: 20px;
+}
+
+#show .bio {
+    width: 100%;
+    height: 200px;
+    background: lightsalmon;
+    padding: 1rem;
+}
+
+#show .bio p {
+    margin-top: 10px;
+}
+
+#show,
+
+.posts {
+    padding: 1rem;
+    background: lightblue;
+    margin-top: 1rem;
+}
+
+#show,
+
+.posts .post-title {
+    margin: 2rem 0;
+}
+
+#show,
+
+.posts .post-title p {
+    padding-top: 1rem;
+}
+
+#show,
+
+.posts .likes-comments {
+    text-align: right;
+}
+
+#show,
+
+.posts .likes-comments p {
+    display: inline;
+}
+
+#show .all-posts {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+#show .all-posts a {
+    background-color: lightcoral;
+    padding: 1rem 2rem;
+}
+
+#all-posts .comments {
+    background: lightgoldenrodyellow;
+    padding: 2rem;
+    margin: 1rem 0;
+}

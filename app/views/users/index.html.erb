@@ -1,8 +1,11 @@
-<h1>users</h1>
-
-
+<div id="home-card">
 <% @users.each do |user| %>
 <%= link_to "/users/#{user.id}" do %>
+<div class="inner-home-card">
     <%= render partial:"shared/users/index" , locals: {user:user} %>
+</div>
     <% end %>
 <% end %>
+</div>
+
+

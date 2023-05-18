@@ -1,19 +1,33 @@
-<h1>user posts </h1>
+<div id="all-posts">
 
-<%= image_tag(@user.photo) %>
-<%= @user.name %>
-<%= @user.posts_counter %>
+    <div class="home-show-card">
+            <%= image_tag(@user.photo)%>
+            <h2> <%=  @user.name %> </h2>
+            <b> Number of posts: <%=@user.posts_counter%> </b>
+    </div>
 
-<% @posts.each do |post| %>
-    <%= link_to "posts/#{post.id}" do %>
-        <%= post.title %>
-        <%= post.text %>
-        <%= post.likes_counter %>
-        <%= post.comments_counter %>
-    <% end %>
+    <div class="posts">
+            <% @posts.each_with_index do |post, ind| %>
+                <%= link_to "posts/#{post.id}" do %>
+                    <b>Post#<%= ind+1 %></b> 
+                    <div class="post-title">
+                        <h3><%= post.title %></h3> 
+                        <p><%= post.text %></p> 
+                        </div>
+                        <div class="likes-comments"> 
+                        <p>Comments : <%= post.comments_counter %>, </p>
+                        <p>Likes : <%= post.likes_counter %></p>
+                    </div>
+                <% end %>
 
-        <% post.last_five_comments.each do |comment| %>
-            <%= comment.author.name %>
-            <%= comment.text %>
-        <% end %>
-<% end %>
+                    <div class="comments">
+                        <% post.last_five_comments.each do |comment| %>
+                            <%= comment.author.name %> :
+                            <%= comment.text %>
+                        <% end %>
+                    </div>
+            <% end %>
+    </div>
+
+
+</div>
