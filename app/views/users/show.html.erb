@@ -10,6 +10,7 @@
     </div>
 
     <div class="posts">
+    <% unless @posts.empty? %>
         <% @posts.each_with_index do |post, ind| %>
            <b>Post#<%= ind+1 %></b> 
            <div class="post-title">
@@ -21,11 +22,17 @@
                <p>Likes : <%= post.likes_counter %></p>
             </div>
         <% end %>
+    <% else %>
+    <p>No post found!!!</p>
+    <% end %>
     </div>
     
+    <% unless @posts.empty? %>
     <div class="all-posts">
         <%= link_to "#{@user.id}/posts" do %>
             <%= 'see all posts' %>
         <% end %>
     </div>
+    <% else %>
+    <% end %>
 </div>

@@ -20,12 +20,16 @@
                     </div>
                 <% end %>
 
+                    <% unless post.last_five_comments.empty? %>
                     <div class="comments">
                         <% post.last_five_comments.each do |comment| %>
                             <%= comment.author.name %> :
                             <%= comment.text %>
                         <% end %>
                     </div>
+                    <% else %>
+                    <p> No Comment Found!!!</p>
+                    <% end %>
             <% end %>
     </div>
 

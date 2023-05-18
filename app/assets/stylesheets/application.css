@@ -71,18 +71,16 @@ a {
     padding-right: 20px;
 }
 
-#show .bio {
+.bio {
     width: 100%;
     height: 200px;
     background: lightsalmon;
     padding: 1rem;
 }
 
-#show .bio p {
+.bio p {
     margin-top: 10px;
 }
-
-#show,
 
 .posts {
     padding: 1rem;
@@ -90,36 +88,28 @@ a {
     margin-top: 1rem;
 }
 
-#show,
-
 .posts .post-title {
     margin: 2rem 0;
 }
-
-#show,
 
 .posts .post-title p {
     padding-top: 1rem;
 }
 
-#show,
-
-.posts .likes-comments {
+.likes-comments {
     text-align: right;
 }
-
-#show,
 
 .posts .likes-comments p {
     display: inline;
 }
 
-#show .all-posts {
+.all-posts {
     text-align: center;
     margin: 3rem 0;
 }
 
-#show .all-posts a {
+.all-posts a {
     background-color: lightcoral;
     padding: 1rem 2rem;
 }
@@ -128,4 +118,13 @@ a {
     background: lightgoldenrodyellow;
     padding: 2rem;
     margin: 1rem 0;
+}
+
+.post-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.like-comment {
+    display: flex;
 }
