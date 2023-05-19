@@ -2,9 +2,6 @@
 
 <h1>Welcome to my Blog 🥳</h1>
 
-<%= link_to "/posts/new" do %>
-    <button>Create a Post</button>
-<% end %>
 
 <% @users.each do |user| %>
 <%= link_to "/users/#{user.id}" do %>
