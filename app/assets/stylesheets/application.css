@@ -128,3 +128,7 @@ a {
 .like-comment {
   display: flex;
 }
+
+.comments {
+  background: lightgoldenrodyellow;
+}
