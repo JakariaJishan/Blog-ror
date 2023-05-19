@@ -14,12 +14,12 @@ class PostsController < ApplicationController
   end
 
   def create
-   @post = Post.new(post_params)
-   @post.author = current_user
+    @post = Post.new(post_params)
+    @post.author = current_user
     puts :post
     if @post.save
       redirect_to "/users/#{current_user.id}/posts"
-    else 
+    else
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,5 +29,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text).merge(author_id: current_user.id, comments_counter: 0, likes_counter: 0)
   end
-
 end
