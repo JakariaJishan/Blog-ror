@@ -1,31 +1,38 @@
 <div id="show">
- <div class="posts">
-            <% @posts.each_with_index do |post, ind| %>
+ <div class="posts comments">
                        <div class="post-head">
-                            <b>Post#<%= ind+1 %> by <%=@user.name%></b> 
+                            <b>Post#<%= 1 %> by <%=@user.name%></b> 
                             <div class="like-comment">
-                                <p>Comments : <%= post.comments_counter %>,  </p>
-                                <p>Likes : <%= post.likes_counter %></p>
+                                <p>Comments : <%= @post.comments_counter %>,  </p>
+
+                                <p>Likes : <%= @post.likes_counter %></p>
+                                <%= form_with url:"/users/#{@post.author.id}/posts/#{@post.id}/add_like"  do |form| %>
+                                    <%= form.submit '🖤'%>
+                                <% end %>
                             </div>
                        </div>
                         <div class="post-title">
-                            <h3><%= post.title %></h3> 
-                            <p><%= post.text %></p> 
-                        </div>
-                        <div class="likes-comments"> 
+                            <h3><%= @post.title %></h3> 
+                            <p><%= @post.text %></p> 
                         </div>
 
-                   <% unless post.last_five_comments.empty? %>
+                         <% unless @post.last_five_comments.empty? %>
                     <div class="comments">
-                        <% post.last_five_comments.each do |comment| %>
+                        <% @post.last_five_comments.each do |comment| %>
+                       <%= puts comment%>
                             <%= comment.author.name %> :
-                            <%= comment.text %>
+                            <%= comment.text %> <br>
                         <% end %>
                     </div>
                     <% else %>
                     <p> No Comment Found!!!</p>
                     <% end %>
-            <% end %>
+                      <%= form_with url:"/users/#{@post.author.id}/posts/#{@post.id}/add_comment" , method: :post, scope: :comment  do |form| %>
+                       <%= form.text_area :text %>
+                        <%= form.submit 'Send'%>
+                    <% end %>
+
+                  
     </div>
 
 </div>

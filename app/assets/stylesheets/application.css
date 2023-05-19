@@ -114,6 +114,10 @@ a {
   padding: 1rem 2rem;
 }
 
+.comments {
+  background: lightgoldenrodyellow;
+}
+
 #all-posts .comments {
   background: lightgoldenrodyellow;
   padding: 2rem;

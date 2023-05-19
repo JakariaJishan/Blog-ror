@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show] do
     resources :posts , only: [:index, :show]
   end
+
+  # resources :posts
+  get "/posts/new", to: 'posts#new'
+  post "/posts", to: 'posts#create'
+  post "/users/:user_id/posts/:id/add_like", to: 'likes#add_like'
+  post "/users/:user_id/posts/:id/add_comment", to: 'comments#add_comment'
 end

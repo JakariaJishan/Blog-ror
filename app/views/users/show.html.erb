@@ -9,6 +9,10 @@
         <p ><%= @user.bio %></p>
     </div>
 
+    <%= link_to "/posts/new" do %>
+        <button>Create a Post</button>
+    <% end %>
+
     <div class="posts">
     <% unless @posts.empty? %>
         <% @posts.each_with_index do |post, ind| %>

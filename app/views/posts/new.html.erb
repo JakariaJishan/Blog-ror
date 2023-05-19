@@ -1,0 +1,22 @@
+<h4>New blog post: </h4>
+<%= form_with model:@post, url: posts_path do |form| %>
+ <% if form.object.errors.any? %>
+      <div>
+        <% form.object.errors.full_messages.each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+    <div class="">
+        <%= form.label :text %>
+        <%= form.text_area :text %>
+    </div>
+    <div class="">
+        <%= form.submit "Create Post" %>
+    </div>
+
+<% end %>
