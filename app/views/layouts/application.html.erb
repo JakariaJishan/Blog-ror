@@ -8,12 +8,20 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%# <a href='/users/sign_in'>sign in </a> %>
+
+    <% if user_signed_in?%>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+    <% else %>
+    <a href='/users/sign_in'>sign in </a>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
