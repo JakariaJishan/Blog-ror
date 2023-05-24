@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   /* background-color: orange; */
   margin: 0;
