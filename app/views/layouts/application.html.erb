@@ -14,11 +14,11 @@
 
   <body>
     <div class='login'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice text-green-600"><%= notice %></p>
+    <p class="alert text-red-600"><%= alert %></p>
 
     <% if user_signed_in?%>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+           <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
     <% end %>
 
 </div>
