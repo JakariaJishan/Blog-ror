@@ -105,6 +105,7 @@ rails db:migrate
 To run the project, execute the following command:
 
 ```sh
+rails tailwindcss:bundle
   rails server or rails s
 ```
 
