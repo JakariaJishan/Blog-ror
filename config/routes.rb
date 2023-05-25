@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "users#index"
   resources :users, only:[:index, :show] do
-    resources :posts , only: [:index, :show, :destroy]
+    resources :posts , only: [:index, :show, :new, :create, :destroy]
   end
 
   # resources :posts
@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   post "/posts", to: 'posts#create'
   post "/users/:user_id/posts/:id/add_like", to: 'likes#add_like'
   post "/users/:user_id/posts/:id/add_comment", to: 'comments#add_comment'
-  # post "/users/:user_id/posts/:id/destroy", to: 'posts#destroy'
+  post "/users/:user_id/posts/:id/destroy", to: 'comments#destroy'
   
 end

@@ -9,15 +9,9 @@
         <p ><%= @user.bio %></p>
     </div>
 
-    <%# if can? :create, @post %>
         <%= link_to "/posts/new" do %>
             <button>Create a Post</button> 
         <% end %>
-    <%# end %>
-
-    <%#= link_to "/posts/new" do %>
-        <%# <button>Create a Post</button> %>
-    <%# end %>
 
     <div class="posts">
     <% unless @posts.empty? %>

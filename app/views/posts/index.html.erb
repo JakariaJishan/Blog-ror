@@ -20,7 +20,7 @@
                     </div>
                 <% end %>
                         <% if can? :destroy, post %>
-                        <%= button_to "Delete", user_post_path(user_id: @user.id, id: post.id), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+                        <%= button_to "Delete Post", user_post_path(user_id: @user.id, id: post.id), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
                         <% end %>
 
                     <% unless post.last_five_comments.empty? %>
