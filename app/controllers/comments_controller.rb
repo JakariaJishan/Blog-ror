@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  # load_and_authorize_resource
   def add_comment
     @new_comment = Comment.new(params.require(:comment).permit(:text))
     @new_comment.author = current_user
@@ -10,10 +9,9 @@ class CommentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     @comment = Comment.find(params[:id])
-    # puts @comment.inspect
     @post = @comment.post
     @user = @post.author
     authorize! :destroy, @comment
@@ -22,9 +20,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     @post.save
     @user.save
-    if @comment.errors.any?
-      puts @comment.errors.full_messages # Debug output
-    end
-    redirect_to user_post_path(@user.id,@post.id ) , notice: 'Comment deleted successfully.'
+    puts @comment.errors.full_messages if @comment.errors.any?
+    redirect_to user_post_path(@user.id, @post.id), notice: 'Comment deleted successfully.'
   end
 end
