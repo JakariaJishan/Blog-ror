@@ -9,4 +9,18 @@ class CommentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @user = @post.author
+    authorize! :destroy, @comment
+    @post.comments_counter -= 1
+    @user.posts_counter -= 1
+    @comment.destroy
+    @post.save
+    @user.save
+    puts @comment.errors.full_messages if @comment.errors.any?
+    redirect_to user_post_path(@user.id, @post.id), notice: 'Comment deleted successfully.'
+  end
 end
