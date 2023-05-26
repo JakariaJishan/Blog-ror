@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def index
     @comments = Comment.all
     render json: @comments
@@ -10,10 +9,11 @@ class CommentsController < ApplicationController
     @new_comment.author = current_user
     @new_comment.post = Post.find(params[:id])
 
-    # here ------- 👉👉👉
-
-
-    
+    if @new_comment.save
+      render json: @new_comment, status: :created
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
