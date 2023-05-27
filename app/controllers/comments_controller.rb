@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     if @new_comment.save
       render json: @new_comment, status: :created
     else
-      render :new, status: :unprocessable_entity
+      render json: { error: 'error creating...' }
     end
   end
 
